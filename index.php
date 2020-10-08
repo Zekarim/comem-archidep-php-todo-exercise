@@ -44,7 +44,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $updateQuery = ''; // IMPLEMENT ME
+        $updateQuery = 'UPDATE some_table SET an_int_value = IF(an_int_value=1, 0, 1)';
         if(!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
         }
