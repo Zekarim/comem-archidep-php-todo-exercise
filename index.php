@@ -12,7 +12,7 @@ define('DB_USER', 'todolist');
 define('DB_PASS', 'chAngeMeN0w!');
 define('DB_NAME', 'todolist');
 define('DB_HOST', '127.0.0.1');
-define('DB_PORT', '3306');
+define('DB_PORT', '8889');
 
 $db = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASS);
 $items = array();
@@ -44,7 +44,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $updateQuery = 'UPDATE some_table SET an_int_value = IF(an_int_value=1, 0, 1)';
+        $updateQuery = 'UPDATE todo SET done = IF(done=1, 0, 1) WHERE id ='.$id;
         if(!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
         }
