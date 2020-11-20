@@ -9,7 +9,7 @@
 define('BASE_URL', getenv('TODOLIST_BASE_URL') ?: $_SERVER['REQUEST_URI']);
 
 // Database connection parameters.
-define('DB_USER', getenv('TODOLIST_DB_USER') ?: $_SERVER['REQUEST_URI']);
+define('DB_USER', getenv('TODOLIST_DB_USER') ?: 'todolist');
 define('DB_PASS', getenv('TODOLIST_DB_PASS'));
 define('DB_NAME', getenv('TODOLIST_DB_NAME') ?: 'todolist');
 define('DB_HOST', getenv('TODOLIST_DB_HOST') ?: 'localhost');
